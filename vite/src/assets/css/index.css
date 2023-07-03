@@ -1,0 +1,118 @@
+@import './base.css';
+
+
+/*header*/
+#site-navigation.toggled ul {
+	@apply block !important;
+}
+#site-navigation li a{
+    @apply text-lg lg:text-xl px-6 lg:px-0 my-2 lg:my-0 py-3 lg:py-0 block lg:inline-block hover:text-primary-200; 
+}
+#site-navigation li.current-menu-item a {
+    @apply  lg:bg-transparent rounded lg:rounded-none;
+}
+.primary-menu li {
+	@apply px-4 py-1.5 m-1;
+}
+.primary-menu .current_page_item {
+	@apply border-b-2 border-solid border-[#c3a865];
+}
+.header-logo .custom-logo {
+    @apply w-6/12;
+}
+.sticky-menu-placeholder {
+    @apply hidden h-0;
+}
+.sticky-menu {
+    @apply fixed top-0 left-0 w-full z-[999];
+}
+/*block right-left*/
+.text-col p {
+    @apply pt-3;
+}
+/*rating*/
+/* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+.rating-group {
+	@apply inline-flex;
+}
+
+/* make hover effect work properly in IE */
+.rating__icon {
+	@apply pointer-events-none;
+}
+
+/* hide radio inputs */
+.rating__input {
+	@apply absolute -left-[9999px] !important;
+}
+
+/* set icon padding and size */
+.rating__label {
+	@apply cursor-pointer px-[3px] text-[32px];
+}
+
+/* add padding and positioning to half star labels */
+.rating__label--half {
+	padding-right: 0;
+	margin-right: -38px;
+	z-index: 2;
+}
+
+/* set default star color */
+.rating__icon--star {
+	@apply text-orange-400;
+}
+
+/* set color of none icon when unchecked */
+.rating__icon--none {
+	color: #eee;
+}
+
+/* if none icon is checked, make it red */
+/* .rating__input--none:checked + .rating__label .rating__icon--none {
+	color: red;
+} */
+
+/* if any input is checked, make its following siblings grey */
+.rating__input:checked ~ .rating__label .rating__icon--star {
+	color: #ddd;
+}
+
+/* make all stars orange on rating group hover */
+.rating-group:hover .rating__label .rating__icon--star,
+.rating-group:hover .rating__label--half .rating__icon--star {
+	@apply text-orange-400;
+}
+
+/* make hovered input's following siblings grey on hover */
+.rating__input:hover ~ .rating__label .rating__icon--star,
+.rating__input:hover ~ .rating__label--half .rating__icon--star {
+	@apply text-[#ddd];
+}
+
+/* make none icon grey on rating group hover */
+.rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+	@apply text-[#eee];
+}
+
+/* make none icon red on hover */
+/* .rating__input--none:hover + .rating__label .rating__icon--none {
+	color: red;
+} */
+
+.showRating {
+	@apply w-5 h-5;
+}
+.showRating img {
+	@apply object-contain;
+}
+.swiper-pagination-bullet-active {
+	@apply !bg-green-200;
+}
+.star-half:after {
+	content: '';
+	@apply w-1/2 absolute h-full bg-white right-0;
+}
+.star-half {
+	@apply relative;
+}
